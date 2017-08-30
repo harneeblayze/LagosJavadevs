@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LagosJavadevs</string>
+    <string name="action_settings">Refresh</string>
+    <string name="title_activity_user">UserActivity</string>
+</resources>
