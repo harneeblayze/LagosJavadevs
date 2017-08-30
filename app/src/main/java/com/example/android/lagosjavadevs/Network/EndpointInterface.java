@@ -1,8 +1,6 @@
 package com.example.android.lagosjavadevs.Network;
 
-import com.example.android.lagosjavadevs.dataclasses.Item;
-
-import java.util.List;
+import com.example.android.lagosjavadevs.dataclasses.Result;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -14,6 +12,6 @@ import retrofit2.http.GET;
 public interface EndpointInterface {
     String API_KEY = "d00d29f855aaca5353971436ba353ef7a6ea8b40";
     @GET("users?q=+location:lagos+language:java?access_token="+API_KEY)
-    Call<List<Item>> getJavaUsers();
+    Call<Result> getJavaUsers();
 }
 

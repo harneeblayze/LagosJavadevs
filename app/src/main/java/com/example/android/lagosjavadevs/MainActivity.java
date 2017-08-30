@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 
 import com.example.android.lagosjavadevs.Network.EndpointInterface;
 import com.example.android.lagosjavadevs.dataclasses.Item;
+import com.example.android.lagosjavadevs.dataclasses.Result;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import static android.support.v7.widget.RecyclerView.LayoutManager;
 
 public class MainActivity extends AppCompatActivity {
-    private final static String BASE_URL = "https://api.github.com/search";
+    private final static String BASE_URL = "https://api.github.com/search/";
     private final static  String USERS_TAG = "all_users";
     List<Item> users;
     RecyclerView recyclerView;
@@ -86,20 +87,18 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         EndpointInterface apiService = retrofit.create(EndpointInterface.class);
         progressBar.setVisibility(View.VISIBLE);
-        Call<List<Item>> call = apiService.getJavaUsers();
-        call.enqueue(new Callback<List<Item>>() {
+        Call<Result> call = apiService.getJavaUsers();
+        call.enqueue(new Callback<Result>() {
             @Override
-            public void onResponse(Call<List<Item>> call, Response<List<Item>> response) {
-                if(response.body() instanceof List && response.body() != null){
-                    users.clear();
-                    users.addAll(response.body());
-                    devAdapter.notifyDataSetChanged();
-                }
+            public void onResponse(Call<Result> call, Response<Result> response) {
+                users.clear();
+                users.addAll(response.body().getItems());
+                devAdapter.notifyDataSetChanged();
                 progressBar.setVisibility(View.GONE);
             }
 
             @Override
-            public void onFailure(Call<List<Item>> call, Throwable t) {
+            public void onFailure(Call<Result> call, Throwable t) {
             }
         });
     }

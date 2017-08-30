@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,7 +11,7 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <TextView
             android:id="@+id/textview1"
             android:layout_marginTop="30dp"
@@ -19,10 +20,15 @@
             android:text="   Check out this User via the link : "
             android:textSize="22sp"/>
         <TextView
+            android:layout_marginLeft="30dp"
             android:layout_below="@id/textview1"
             android:layout_marginTop="20dp"
             android:id="@+id/github_repo_link"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
+
     </RelativeLayout>
-</android.support.v4.widget.NestedScrollView>
+
+
+</RelativeLayout>

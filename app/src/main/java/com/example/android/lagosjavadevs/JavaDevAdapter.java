@@ -48,7 +48,7 @@ public class JavaDevAdapter extends RecyclerView.Adapter<JavaDevAdapter.JavaDevA
                 Intent intent = new Intent(v.getContext(),UserActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("intent_user",(Parcelable) allUsers.get(position));
-                s
+                myContext.startActivity(intent);
             }
         });
     }
