@@ -14,17 +14,20 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_marginTop="60dp" />
 
     <ProgressBar
         android:id="@+id/loading_bar"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_gravity="center"
         app:layout_anchor="@+id/include"
         android:layout_marginTop="42dp"
         android:visibility="visible"
         android:layout_below="@+id/user_recycler_view"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="130dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="130dp"
+        android:layout_marginLeft="130dp"/>
 </RelativeLayout>
